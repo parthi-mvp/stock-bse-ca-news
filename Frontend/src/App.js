@@ -82,7 +82,7 @@ function App() {
   const [state, setState] = useState([]);
   const date = new Date();
   function get_data() {
-    return fetch("http://127.0.0.1:5000/bse/news/data")
+    return fetch("/bse/news/data")
       .then((res) => res.json())
       .then((data) => setState(data));
   }
