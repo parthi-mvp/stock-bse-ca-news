@@ -38,7 +38,8 @@ function GlobalFilter({
       <span className="text-gray-700">Search: </span>
       <input
         type="text"
-        className=" border-2 rounded-md py-1.5  px-2 border-gray-300 shadow-sm focus:outline-none focus:border-indigo-400 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+        // className=" border-2 rounded-md py-1.5  px-2 border-gray-300 shadow-sm focus:outline-none focus:border-indigo-400 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+        className=" border-2 py-1.5  px-2 border-indigo-100  focus:outline-none mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm rounded-md"
         value={value || ""}
         onChange={(e) => {
           setValue(e.target.value);
@@ -162,7 +163,7 @@ function Table({ columns, data, updatestate }) {
   // Render the UI for your table
   return (
     <>
-      <div className="flex justify-center items-center flex-wrap py-2">
+      <div className="flex justify-center items-center flex-wrap py-3 text-gray-900  rounded-md ">
         <GlobalFilter
           preGlobalFilteredRows={preGlobalFilteredRows}
           globalFilter={state.globalFilter}
@@ -180,7 +181,7 @@ function Table({ columns, data, updatestate }) {
         )}
         <button
           type="button"
-          className="boder flex justify-center p-2 mr-5 text-white bg-blue-700  hover:bg-opacity-80"
+          className="boder flex justify-center p-2 mr-5 text-white bg-blue-700  hover:bg-opacity-80 rounded-md"
           onClick={() => get_updates()}
         >
           <svg
@@ -202,7 +203,7 @@ function Table({ columns, data, updatestate }) {
 
         <Menu as="div" className="relative inline-block text-left mr-5">
           <div>
-            <Menu.Button className="inline-flex justify-center w-full py-1 text-leftrounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-1 focus:ring-indigo-500">
+            <Menu.Button className="inline-flex justify-center w-full py-1 text-left rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-1 focus:ring-indigo-500">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 animate-pulse"
@@ -258,12 +259,12 @@ function Table({ columns, data, updatestate }) {
       <div className="mt-4 flex flex-col">
         <div className="-my-2 overflow-x-auto -mx-4 sm:-mx-6 lg:-mx-8">
           <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-            <div className="shadow-md overflow-hidden border-b border-gray-200 sm:rounded-lg">
+            <div className="shadow-md overflow-hidden border-b border-gray-300 sm:rounded-lg">
               <table
                 {...getTableProps()}
                 className="min-w-full divide-y divide-gray-200"
               >
-                <thead className="bg-gray-100">
+                <thead className="bg-gray-50">
                   {headerGroups.map((headerGroup) => (
                     <tr {...headerGroup.getHeaderGroupProps()}>
                       {headerGroup.headers.map((column) => (
@@ -298,7 +299,7 @@ function Table({ columns, data, updatestate }) {
                 </thead>
                 <tbody
                   {...getTableBodyProps()}
-                  className="bg-white divide-y divide-gray-300"
+                  className="bg-white divide-y divide-gray-200"
                 >
                   {page.map((row, i) => {
                     // new

@@ -82,7 +82,7 @@ function App() {
   const [state, setState] = useState([]);
   const date = new Date();
   function get_data() {
-    return fetch("/bse/news/data")
+    return fetch("http://127.0.0.1:5000/bse/news/data")
       .then((res) => res.json())
       .then((data) => setState(data));
   }
@@ -91,7 +91,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50 text-sm">
+    <div className="min-h-screen text-sm bg-gray-100">
       <main className="p-10">
         <div className="flex flex-col">
           <h1 className=" text-3xl font-semibold text-center flex-1">

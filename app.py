@@ -85,5 +85,4 @@ def get_data():
 
 if __name__ == "__main__":
     threading.Timer(1.25, lambda: webbrowser.open_new("http://127.0.0.1:5000/")).start()
-    app.run(debug=False,port=5000, host="127.0.0.1")
-
+    app.run(debug=True, port=5000, host="127.0.0.1")
